@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure</title>
+
+    <link rel="stylesheet" href="./stylesheets/Calculator.css" />
+</head>
+
+<body class="bckgrnd">
+
+    <header>
+        <nav class="navbar navbar-expand-md ">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand fs-2" style="color: rgb(90, 90, 90)" href="#">Zach Cisney</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav py-2">
+                        <li class="nav-item">
+                            <a class="nav-link navItem active" aria-current="page"
+                                href="http://localhost:8080/index.html#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navItem active"
+                                href="http://localhost:8080/Adventure.html#">Adventure</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link currentNavItem active"
+                                href="http://localhost:8080/Calculator.html#">Calculator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navItem active" href="http://localhost:8080/Future.html#">Future</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link currentNavItem active" href="http://localhost:8080/Programs.html#">Programs</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <Section>
+        <header class="container row row-cols-2 align-items-center">
+
+            <h1 class="title d-inline-flex ms-5 m-3 py-2">Finacial Calculator</h1>
+        </header>
+
+        <main class="input bg-dark p-5 text-white">
+            
+            <div class="container">
+                <form class="my-2 d-flex justify-content-center" method="post">
+                    
+                    <div class="col">
+                    <label class="ps-2" for="amount">Amount: </label>
+                    <input class="ms-2" type="number" id="amount" name="amount" placeholder="$0.00">
+                    </div>
+
+                    <div class="col">
+                    <label class="ps-2" for="cars">Choose a Protocal:</label>
+                    <select name="protocal" id="protocal" size="1">
+                        <option value="0">(Pick One)</option>
+                        <option value="1">Tuition Focus</option>
+                        <option value="2">Skiing Focus</option>
+                        <option value="3">Car Loan</option>
+                        <option value="4">Home Savings</option>
+                        <!-- Didn't have enough time to write all the cases that I want to have -->
+                    </select>
+
+                    <button type="submit" class="sub ms-4 p-1 btn btn-primary">Submit</button>
+                    </div>
+                    
+                </form>
+            </div>
+
+            <div class="calculations p-3 row row-cols-5">
+                <div class="col">
+                    <h6>Stocks</h6>
+                </div>
+                <div class="col">
+                    <h6>Tuition</h6>
+                </div>
+                <div class="col">
+                    <h6>Home Savings</h6>
+                </div>
+                <div class="col">
+                    <h6>Ski Fund</h6>
+                </div>
+                <div class="col">
+                    <h6>Dog Fund</h6>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+
+        </footer>
+    </Section>
+
+    <script type="module" src="./javascripts/Calculator.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs</title>
+
+  <link rel="stylesheet" href="./stylesheets/Programs.css" />
+</head>
+
+<body class="bckgrnd">
+  <header style="display: none;">
+    <nav class="navbar navbar-expand-md ">
+      <div class="container-fluid px-5">
+        <a class="navbar-brand fs-2" style="color: rgb(90, 90, 90)" href="#">Zach Cisney</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav py-2">
+            <li class="nav-item">
+              <a class="nav-link navItem active" aria-current="page" href="http://localhost:8080/index.html#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem active" href="http://localhost:8080/Adventure.html#">Adventure</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem active" href="http://localhost:8080/Calculator.html#">Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navItem active" href="http://localhost:8080/Future.html#">Future</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link currentNavItem active" href="http://localhost:8080/Programs.html#">Programs</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+  <article class="flex-fluid pt-5 pb-5">
+    <section class="middle container p-0 justify-content-center">
+      <div class="row row-cols-1 row-cols-sm-2 p-4">
+
+        <aside class="order-1 order-sm-2 rightSide">
+          <div class="col pe-2 pe-sm-0 ps-sm-2">
+
+            <h1 class="display-3 py-2 d-flex flex-sm-row-reverse">Previous Projects</h1>
+
+            <!-- Stock Shuffle -->
+            <div class="list py-2 my-3">
+
+              <div class="titleDate">
+                <h4>Stock Shuffle</h4>
+                <h6 style="color: rgb(112, 112, 112);">Summer 2023</h6>
+              </div>
+
+              <pre class="codePython">
+                            <code>
+                                <span style="color: green">#NOTES:</span>
+                                <span style="color: green"># Had to use pip in CMD to install Selenium</span>
+                                <span style="color: green">#   THEN</span>
+                                <span style="color: green"># Found the correct Webdriver version for specific Chrome and then downloaded and moved to programsx86</span>
+                                <span style="color: green">#   THEN</span>
+                                <span style="color: green"># *Had an issue with the interpreter changed pathway and then restarted VS Code</span>
+                    
+                                <span style="color: blue">import</span> time
+                                <span style="color: blue">from</span> selenium <span style="color: blue">import</span> webdriver
+                                <span style="color: blue">from</span> selenium.webdriver.common.keys <span style="color: blue">import</span> Keys
+                    
+                                <span style="color: blue"># Create a new instance of the Chrome driver</span>
+                                driver = webdriver.Chrome()
+                    
+                                <span style="color: blue"># Open the first tab</span>
+                                driver.get("https://robinhood.com")
+                    
+                                <span style="color: blue"># Open additional tabs</span>
+                                driver.execute_script("window.open('https://robinhood.com/stocks/WMT')")
+                                driver.execute_script("window.open('https://robinhood.com/stocks/SPY')")
+                                driver.execute_script("window.open('https://robinhood.com/stocks/MSFT')")
+                                driver.execute_script("window.open('https://robinhood.com/stocks/AXP')")
+                    
+                                <span style="color: blue"># Store the handles of all opened tabs</span>
+                                handles = driver.window_handles
+                    
+                                <span style="color: blue"># Iterate through the tabs and switch between them every 20 seconds</span>
+                                current_tab = 0
+                                <span style="color: blue">while</span> <span style="color: blue">True</span>:
+                                    <span style="color: green"># Switch to the next tab</span>
+                                    driver.switch_to.window(handles[current_tab])
+                    
+                                    <span style="color: green"># Wait for 20 seconds</span>
+                                    time.sleep(20)
+                    
+                                    <span style="color: green"># Move to the next tab</span>
+                                    current_tab = (current_tab - 1) % len(handles)
+                            </code>
+                        </pre>
+
+              <!--  -->
+              <div class="ps-4 pt-3">
+                <h6 class="p-0 m-0">Uses:</h6>
+                <input type="checkbox" checked>
+                <label>Raspberry Pi</label><br>
+                <input type="checkbox" checked>
+                <label>Python</label><br>
+                <input type="checkbox" checked>
+                <label>Selenium</label><br>
+                <input type="checkbox" checked>
+                <label>Chromium WebDriver</label><br>
+                <input type="checkbox" checked>
+                <label>Visual Studio Code</label><br>
+              </div>
+
+              <div class="summary">
+                <h6>Stock Shuffle is a personal project that I created. This program pulls up RobinHood in multiple
+                  tabs. The first tab is my personal account and the next four tabs are all stocks that I am currently
+                  monitoring. The Program is on a 20 second timer and the webpages are displayed on the TV adjacent to
+                  my desk. </h6>
+                <h6>*This was fun because my bluetooth keyboard that I use with my Raspberry Pi recently broke so I used
+                  VNC to remotely set everything up.</h6>
+              </div>
+            </div>
+
+
+            
+            <!-- C++ Tree Parser -->
+            <div class="list py-2 my-3">
+              <div class="titleDate">
+
+                <h4>Tree Parser</h4>
+                <h6 style="color: rgb(112, 112, 112);">Fall 2021</h6>
+              </div>
+
+              <div class="codeCPP">
+                <pre>
+              <code>
+              <span class="comment">// Copyright 2021, Bradley Peterson, Weber State University, all rights reserved. (11/2021)</span>
+              
+              <span class="keyword">#include</span> <span class="string">&lt;iostream&gt;</span>
+              <span class="keyword">#include</span> <span class="string">&lt;string&gt;</span>
+              <span class="keyword">#include</span> <span class="string">&lt;stack&gt;</span>
+              <span class="keyword">#include</span> <span class="string">&lt;sstream&gt;</span>
+              <span class="keyword">#include</span> <span class="string">&lt;cmath&gt;</span>
+              <span class="keyword">#include</span> <span class="string">&lt;cstdio&gt;</span>
+              
+              <span class="keyword">using</span> std::stack;
+              <span class="keyword">using</span> std::istringstream;
+              <span class="keyword">using</span> std::ostringstream;
+              <span class="keyword">using</span> std::string;
+              <span class="keyword">using</span> std::cout;
+              <span class="keyword">using</span> std::cerr;
+              <span class="keyword">using</span> std::cin;
+              <span class="keyword">using</span> std::endl;
+              <span class="keyword">using</span> std::pow;
+              
+              
+              <span class="keyword">class</span> Node {
+              public:
+                  string mathString;
+                  Node* llink = nullptr;
+                  Node* rlink = nullptr;
+              };
+              
+              <span class="keyword">class</span> TreeParser {
+              private:
+                  stack&lt;string&gt; mathStack;
+                  double castStrToDouble(string <span class="keyword">const</span>&amp; s);
+                  string castDoubleToStr(<span class="keyword">const</span> double d);
+                  <span class="keyword">void</span> initialize();
+              
+                  <span class="keyword">bool</span> isDigit(char c);
+                  <span class="keyword">bool</span> isOperator(char c);
+                  <span class="keyword">void</span> processExpression(Node* p);//raw ptr
+                  <span class="keyword">void</span> computeAnswer(Node* ptr);
+              
+              protected:
+                  string expression;
+                  int position;
+              
+              public: 
+                  TreeParser();
+                  <span class="keyword">void</span> displayParseTree();
+                  <span class="keyword">void</span> processExpression(string &amp;expression);
+                  string computeAnswer();
+                  <span class="keyword">void</span> inOrderTraversal(Node* ptr);
+                  <span class="keyword">void</span> postOrderTraversal(Node* ptr);
+              
+                  Node* root = nullptr;
+              
+              };
+              
+              
+              <span class="keyword">bool</span> TreeParser::isDigit(char c) {
+                  
+                  <span class="keyword">if</span> (isdigit(c)) { <span class="comment">//does this work?</span>
+                      <span class="keyword">return</span> true;
+                  }
+              
+                  <span class="keyword">else</span> {
+                      <span class="keyword">return</span> false;
+                  }
+              }
+              
+              
+              <span class="keyword">bool</span> TreeParser::isOperator(char c) {
+                  <span class="keyword">if</span> (c == '+' || c == '-' || c == '*' || c == '/' || c == '^') {
+                      <span class="keyword">return</span> true;
+                  }
+                  
+                  <span class="keyword">else</span> {
+                      <span class="keyword">return</span> false;
+                  }
+              }
+              
+              
+              <span class="keyword">void</span> TreeParser::processExpression(string&amp; expression) {
+                  
+                  <span class="keyword">if</span> (expression != <span class="string">""</span>) {//if empty
+                  
+                      <span class="keyword">this</span>-&gt;expression = expression;
+                      position = 0;
+                      root = <span class="keyword">new</span> Node();
+              
+                      processExpression(root);
+                  }
+                  <span class="keyword">return</span>;
+              }
+              
+              
+              <span class="keyword">void</span> TreeParser::processExpression(Node* p) {
+              
+                  string tempString = <span class="string">""</span>;
+              
+                  <span class="keyword">while</span> (position &lt; (expression.size())) {
+              
+                      <span class="keyword">if</span> (expression.at(position) == <span class="string">'('</span>) {
+                          Node* temp = <span class="keyword">new</span> Node();
+                          p-&gt;llink = temp;
+                          position++;
+                          processExpression(p-&gt;llink);
+                      }
+                      
+                      <span class="keyword">else if</span> (isDigit(expression.at(position)) == true || expression.at(position) == <span class="string">'.'</span>) {
+                          tempString = expression.at(position);
+                          cout &lt;&lt; tempString;
+                          position++;
+                          <span class="keyword">while</span> (isDigit(expression.at(position)) == true || expression.at(position) == <span class="string">'.'</span>) {
+                              
+                              tempString += expression.at(position);
+                              position++;
+                          
+                          }
+                          p-&gt;mathString = tempString;
+                          <span class="keyword">return</span>;
+                      }
+                      <span class="keyword">else if</span> (isOperator(expression.at(position)) == true) {
+                          Node* temp = <span class="keyword">new</span> Node();
+                          p-&gt;rlink = temp;
+                          p-&gt;mathString = expression.at(position);
+                          position++;
+                          processExpression(p-&gt;rlink);
+                      }
+                      <span class="keyword">else if</span> (expression.at(position) == <span class="string">')'</span>) {
+                          position++;
+                          <span class="keyword">return</span>;
+                      }
+                      <span class="keyword">else if</span> (expression.at(position) == <span class="string">' '</span>) {
+                          position++;
+                      }
+                      tempString = <span class="string">""</span>;
+                  }
+              
+              }
+              
+              
+              string TreeParser::computeAnswer() {
+                  computeAnswer(root);
+                  <span class="keyword">return</span> mathStack.top();
+              }
+              
+              
+              <span class="keyword">void</span> TreeParser::computeAnswer(Node* ptr) {
+                  <span class="keyword">if</span> (ptr) {
+                      computeAnswer(ptr-&gt;llink);
+                      computeAnswer(ptr-&gt;rlink);
+              
+              
+                      <span class="keyword">if</span> (isDigit(ptr-&gt;mathString.at(0)) == true) {
+                          mathStack.push(ptr-&gt;mathString);
+                      }
+              
+                      <span class="keyword">else if</span> (isOperator(ptr-&gt;mathString.at(0)) == true) {
+                          double secondNum = castStrToDouble(mathStack.top());
+                          mathStack.pop();
+                          double firstNum = castStrToDouble(mathStack.top());
+                          mathStack.pop();
+              
+                          <span class="keyword">if</span> (ptr-&gt;mathString == <span class="string">"+"</span>) {
+                              mathStack.push(castDoubleToStr(firstNum + secondNum));
+                          }
+                          <span class="keyword">else if</span> (ptr-&gt;mathString.at(0) == <span class="string">'-'</span>) {
+                              mathStack.push(castDoubleToStr(firstNum - secondNum));
+                          }
+                          <span class="keyword">else if</span> (ptr-&gt;mathString.at(0) == <span class="string">'*'</span>) {
+                              mathStack.push(castDoubleToStr(firstNum * secondNum));
+                          }
+                          <span class="keyword">else if</span> (ptr-&gt;mathString.at(0) == <span class="string">'/'</span>) {
+                              mathStack.push(castDoubleToStr(firstNum / secondNum));
+                          }
+                          <span class="keyword">else if</span> (ptr-&gt;mathString.at(0) == <span class="string">'^'</span>) {
+                              mathStack.push(castDoubleToStr((pow(firstNum, secondNum))));
+                          }
+              
+                      }
+              
+                  }
+              }
+              
+              
+              <span class="keyword">void</span> TreeParser::inOrderTraversal(Node* ptr) {
+                  <span class="keyword">if</span> (ptr) {
+                      inOrderTraversal(ptr-&gt;llink); // Left 
+                      cout &lt;&lt; ptr-&gt;mathString &lt;&lt; <span class="string">" "</span>; //Act
+                      inOrderTraversal(ptr-&gt;rlink); // Right
+                  }
+              }
+              
+              <span class="keyword">void</span> TreeParser::postOrderTraversal(Node* ptr) {
+                  <span class="keyword">if</span> (ptr) {
+                      postOrderTraversal(ptr-&gt;llink); // Left 
+                      postOrderTraversal(ptr-&gt;rlink); // Right
+                      cout &lt;&lt; ptr-&gt;mathString &lt;&lt; <span class="string">" "</span>; //Act
+                  }
+              }
+              
+              //pre written
+              <span class="keyword">void</span> TreeParser::initialize() {
+                  expression = <span class="string">""</span>;
+                  position = 0;
+                  <span class="keyword">while</span> (!mathStack.empty()) {
+                      mathStack.pop();
+                  }
+              }
+              
+              double TreeParser::castStrToDouble(<span class="keyword">const</span> string&amp; s) {
+                  istringstream iss(s);
+                  double x;
+                  iss &gt;&gt; x;
+                  <span class="keyword">return</span> x;
+              }
+              
+              string TreeParser::castDoubleToStr(<span class="keyword">const</span> double d) {
+                  ostringstream oss;
+                  oss &lt;&lt; d;
+                  <span class="keyword">return</span> oss.str();
+              
+              }
+              
+              TreeParser::TreeParser() {
+                  initialize();
+              }
+              
+              
+              <span class="keyword">void</span> TreeParser::displayParseTree() {
+                  cout &lt;&lt; <span class="string">"The expression seen using in-order traversal: "</span>;
+                  inOrderTraversal(root);
+                  cout &lt;&lt; endl;
+                  cout &lt;&lt; <span class="string">"The expression seen using post-order traversal: "</span>;
+                  postOrderTraversal(root);
+                  cout &lt;&lt; endl;
+              }
+              
+              
+              <span class="keyword">int</span> main() {
+                  TreeParser tp;
+                  string expression;
+                  cout &lt;&lt; <span class="string">"Please enter an expression: "</span>;
+                  getline(cin, expression);
+                  tp.processExpression(expression);
+                  tp.displayParseTree();
+                  cout &lt;&lt; <span class="string">"The answer to the expression is: "</span> &lt;&lt; tp.computeAnswer() &lt;&lt; endl;
+                  <span class="keyword">return</span> 0;
+              }
+              </code>
+            </pre>
+              </div>
+
+              <div class="ps-4">
+                <h6 class="p-0 m-0">Uses:</h6>
+                <input type="checkbox" checked>
+                <label>C++</label><br>
+                <input type="checkbox" checked>
+                <label>Visual Studio</label><br>
+              </div>
+
+              <div class="summary">
+                <h6>This program uses a binary tree structure with an expression parser and evaluator to evaluate an
+                  expression corretly. This is one of my older programs from my 2420 Data Structures and Algorithms. My
+                  2420 is the only computer science class that I didn't recieve a A or A- in and it taught me that if I
+                  wanted to really understand how to program well it takes effort. I am greatful for my professor Brad
+                  Peterson that pushed my limits and helped me to progress even further. </h6>
+              </div>
+            </div>
+
+
+
+            <!-- Courses -->
+            <div class="list py-2 my-3">
+              <div class="titleDate">
+
+                <h4>Courses Taken</h4>
+                <h6 style="color: rgb(112, 112, 112);">*Current</h6>
+              </div>
+
+              <div class="ps-4">
+                <h6 class="p-0 m-0">Completed:</h6>
+                <input type="checkbox" checked>
+                <label>CS 2810 - Computer Architecture and Organization</label><br>
+                <input type="checkbox" checked>
+                <label>CS 2705 - Network Fundamentals and Design</label><br>
+                <input type="checkbox" checked>
+                <label>CS 2550 - Intro to Database Design & SQL</label><br>
+                <input type="checkbox" checked>
+                <label>CS 2450 - Software Engineering I</label><br>
+                <input type="checkbox" checked>
+                <label>CS 2420 - Data Structures & Algorithms</label><br>
+                <input type="checkbox" checked>
+                <label>CS 2350 - Client Side Web Development</label><br>
+                <input type="checkbox" checked>
+                <label>CS 1410 - Object-Oriented Programming</label><br>
+                <input type="checkbox" checked>
+                <label>CS 1400 - Programming I</label><br>
+                <input type="checkbox" checked>
+                <label>CS 1030 - Foundations of Computing</label><br>
+                <br>
+                <h6 class="p-0 m-0">In-Progrss:</h6>
+                <input type="checkbox">
+                <label> CS 2130 - Computational Structures </label><br>
+
+              </div>
+
+              <div class="summary">
+                <h6>*All course up until this point have been taken at Weber State University. My projected graduation
+                  date is December 2024 with a Bachelors in Computer Science.</h6>
+              </div>
+            </div>
+
+
+
+            <!-- Blank -->
+            <div class="list py-2 my-3" style="display: none;">
+              <div class="titleDate">
+
+                <h4>Stock Shuffle</h4>
+                <h6 style="color: rgb(112, 112, 112);">6-17-2023</h6>
+              </div>
+
+              <div class="ps-4">
+                <h6 class="p-0 m-0">Uses:</h6>
+                <input type="checkbox" checked>
+                <label>Raspberry Pi</label><br>
+                <input type="checkbox" checked>
+                <label>Python</label><br>
+                <input type="checkbox" checked>
+                <label>Selenium</label><br>
+                <input type="checkbox" checked>
+                <label>Chromium WebDriver</label><br>
+              </div>
+
+              <div class="summary">
+                <h6>Stock Shuffle is a personal project that I created. This program pulls up RobinHood in multiple
+                  tabs. The first tab is my personal account and the next four tabs are all stocks that I am currently
+                  monitoring. The Program is on a 20 second timer and the webpages are displayed on the TV adjacent to
+                  my desk. </h6>
+                <h6>*This was fun because my bluetooth keyboard that I use with my Raspberry Pi recently broke so I used
+                  VNC to remotely set everything up.</h6>
+              </div>
+            </div>
+
+
+
+            <!-- Blank -->
+            <div class="list py-2 my-3" style="display: none;">
+              <div class="titleDate">
+
+                <h4>Stock Shuffle</h4>
+                <h6 style="color: rgb(112, 112, 112);">6-17-2023</h6>
+              </div>
+
+              <div class="ps-4">
+                <h6 class="p-0 m-0">Uses:</h6>
+                <input type="checkbox" checked>
+                <label>Raspberry Pi</label><br>
+                <input type="checkbox" checked>
+                <label>Python</label><br>
+                <input type="checkbox" checked>
+                <label>Selenium</label><br>
+                <input type="checkbox" checked>
+                <label>Chromium WebDriver</label><br>
+              </div>
+
+              <div class="summary">
+                <h6>Stock Shuffle is a personal project that I created. This program pulls up RobinHood in multiple
+                  tabs. The first tab is my personal account and the next four tabs are all stocks that I am currently
+                  monitoring. The Program is on a 20 second timer and the webpages are displayed on the TV adjacent to
+                  my desk. </h6>
+                <h6>*This was fun because my bluetooth keyboard that I use with my Raspberry Pi recently broke so I used
+                  VNC to remotely set everything up.</h6>
+              </div>
+            </div>
+
+
+          </div>
+        </aside>
+
+
+
+
+
+        <aside class="order-2 order-sm-1">
+          <div class="col pe-sm-5 flex-fluid">
+
+            <!-- MIPS OP-code Sorter -->
+            <div class="list py-2 my-3">
+
+
+              <div class="titleDate">
+                <h4>MIPS OP-Code Sorter</h4>
+                <h6 style="color: rgb(112, 112, 112);">Spring 2023</h6>
+              </div>
+
+              <div id="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dAEXMuZ8QkU" frameborder="0"
+                  allowfullscreen></iframe>
+              </div>
+              <!--  Replace VIDEO_ID in the src attribute of the <iframe> tag with the actual YouTube video ID. For example, if the YouTube video link is https://www.youtube.com/watch?v=abcdefg, the video ID is abcdefg, so you would replace VIDEO_ID with abcdefg in the src attribute. -->
+
+              <div class="ps-4">
+                <h6 class="p-0 m-0">Uses:</h6>
+                <input type="checkbox" checked>
+                <label>MIPS</label><br>
+                <input type="checkbox" checked>
+                <label>MARS Software</label><br>
+              </div>
+
+              <div class="summary">
+                <h6>I completed this program as a final project for 2810 Computer Architecture and Organization. It took
+                  OP-codes and determined their type by using nested loops and switches. I really enjoyed this class and
+                  specifically this assignment. I wear this assignment like a badge of honnor because the instructions
+                  were poorly written becuase of this we were given the option to not do this assignment and while have
+                  the class did not complete it I worked through it.</h6>
+              </div>
+
+            </div>
+
+
+
+            <!-- SQL Joins and Sub-queries -->
+            <div class="list py-2 my-3">
+              <div class="titleDate">
+                <h4>Joins and Sub-queries</h4>
+                <h6 style="color: rgb(112, 112, 112);">Fall 2022</h6>
+              </div>
+
+              <div class="codeSQL">
+                <pre>
+                              <code>
+                              /*Assumptions/Standards */
+                              
+                              1 - Dates -- MM/DD/YYYY unless otherwise specified.
+                              
+                              2 - Names -- unless otherwise specified, if a problem asks for a student/instructor name, we want to see the first name and last name columns.
+                              2a - alphabetic listing -- means sort it by last name, then first name
+                              
+                              3 - Start each assignment by pasting the contents of the assignment text into your .sql file -- write your SQL statements AFTER the problem statement comment.
+                              
+                              4 - My preferred contact is: scott.sonderegger@gmail.com
+                              
+                              5 - I've added a line at the top that says "set echo on;" -- please leave it in
+                              
+                              6 - If you are asked to sort on a column, don't use DESC unless you are specifically asked to do so.
+                              
+                              */
+                              
+                              ----------------------------------------------------------------------------------------------
+                              
+                              --leave these next commands in your script
+                              set echo on;
+                              set linesize 3500;
+                              set def off;
+                              set long 2000;
+                              set pagesize 3500;
+                              
+                              <span class="sql-comment">/*1. List the student ID, name and employer of the student that has enrolled the most times.
+                              Arrange the list in alphabetical order of last name then first name.
+                              */</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  s.student_id,
+                                  s.first_name,
+                                  s.last_name,
+                                  s.employer
+                              <span class="sql-keyword">FROM</span>
+                                  student s
+                              <span class="sql-keyword">WHERE</span>
+                                  s.student_id IN (<span class="sql-keyword">SELECT</span> 
+                                                  student_id
+                                              <span class="sql-keyword">FROM</span>
+                                                  enrollment
+                                              <span class="sql-keyword">GROUP BY</span>
+                                                  student_id
+                                              <span class="sql-keyword">HAVING</span>
+                                              COUNT(section_id) = (<span class="sql-keyword">SELECT</span>
+                                                  MAX(COUNT(se.section_id))
+                                              <span class="sql-keyword">FROM</span>
+                                                  student s <span class="sql-keyword">JOIN</span> enrollment e
+                                                  <span class="sql-keyword">ON</span> (s.student_id = e.student_id)
+                                                  <span class="sql-keyword">JOIN</span> section se
+                                                  <span class="sql-keyword">ON</span> (e.section_id = se.section_id)
+                                              <span class="sql-keyword">GROUP BY</span>
+                                                  s.student_id)
+                                                  )
+                              <span class="sql-keyword">ORDER BY</span>
+                                  3,
+                                  4;
+                              <span class="sql-comment">/*3. Provide a list of names and cities of students and instructors that live in zipcode 10025. Identify each person's role as either "Student" or "Instructor". Sort the list by role, last name and first name.
+                              */</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  'student' as Role,
+                                  s.first_name,
+                                  s.last_name,
+                                  z.city
+                              <span class="sql-keyword">FROM</span>
+                                  student s <span class="sql-keyword">JOIN</span> zipcode z
+                                  <span class="sql-keyword">ON</span>(s.zip = z.zip)
+                              <span class="sql-keyword">WHERE</span>
+                                  z.zip = 10025
+                              <span class="sql-keyword">UNION</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  'instructor',
+                                  i.first_name,
+                                  i.last_name,
+                                  z.city
+                              <span class="sql-keyword">FROM</span>
+                                  instructor i <span class="sql-keyword">JOIN</span> zipcode z
+                                  <span class="sql-keyword">ON</span>(i.zip = z.zip)
+                              <span class="sql-keyword">WHERE</span>
+                                  z.zip = 10025
+                              <span class="sql-keyword">ORDER BY</span>
+                                  1,
+                                  3,
+                                  2
+                              <span class="sql-comment">/*4. Create a query that lists location, number of sections taught in that location and number of students enrolled in sections at that location. Sort by location.
+                              */</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  s.location,
+                                  COUNT(DISTINCT(s.section_id)) as Sections_taught,
+                                  COUNT(e.student_id) as Student
+                              <span class="sql-keyword">FROM</span>
+                                  section s <span class="sql-keyword">JOIN</span> enrollment e
+                                  <span class="sql-keyword">ON</span> (s.section_id = e.section_id)
+                              <span class="sql-keyword">GROUP BY</span>
+                                  location
+                              <span class="sql-keyword">ORDER BY</span>
+                                  location;
+                              
+                              <span class="sql-comment">/*5. Create a query that shows all of the individual grades for student ID 112 in section 95 and also the average of those grades. The individual grades should come first with the average at the bottom. List the grade type code and numeric grade. The average row should have a caption of, "Average for student 112 is".
+                              */</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  grade_type_code,
+                                  numeric_grade
+                              <span class="sql-keyword">FROM</span>
+                                  grade
+                              <span class="sql-keyword">WHERE</span>
+                                  student_id = 112
+                                  <span class="sql-keyword">AND</span> section_id = 95
+                              <span class="sql-keyword">UNION ALL</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  'Average for student 112 is',
+                                  ROUND(AVG(numeric_grade), 2)
+                              <span class="sql-keyword">FROM</span>    
+                                  grade
+                              <span class="sql-keyword">WHERE</span>
+                                  student_id = 112
+                                  <span class="sql-keyword">AND</span> section_id = 95
+                              <span class="sql-keyword">ORDER BY</span> 
+                                  1 <span class="sql-keyword">DESC</span>
+                              <span class="sql-comment">/*6. Create an alphabetic listing of all instructors and the number of sections that they have taught.
+                              */</span>
+                              <span class="sql-keyword">SELECT</span>    
+                                  i.first_name,
+                                  i.last_name,
+                                  count(s.section_id) as Sections_Taught
+                              <span class="sql-keyword">FROM</span>
+                                  instructor i <span class="sql-keyword">LEFT OUTER JOIN</span> section s
+                                  <span class="sql-keyword">ON</span> (i.instructor_id = s.instructor_id)
+                              <span class="sql-keyword">GROUP BY</span>
+                                  i.first_name,
+                                  i.last_name
+                              <span class="sql-keyword">ORDER BY</span>
+                                  i.first_name,
+                                  i.last_name
+                              <span class="sql-comment">/*7. List the course number and description of courses wherein students have received grades for all possible grade types. Order by Course Number.
+                              */</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  c.course_no,
+                                  c.description
+                              <span class="sql-keyword">FROM</span>
+                                  course c <span class="sql-keyword">JOIN</span> section s
+                                  <span class="sql-keyword">ON</span> (c.course_no = s.course_no)
+                                  <span class="sql-keyword">JOIN</span> grade g
+                                  <span class="sql-keyword">ON</span> (s.section_id = g.section_id)
+                              <span class="sql-keyword">WHERE</span>
+                                  grade_type_code = 'FI'
+                              <span class="sql-keyword">INTERSECT</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  c.course_no,
+                                  c.description
+                              <span class="sql-keyword">FROM</span>
+                                  course c <span class="sql-keyword">JOIN</span> section s
+                                  <span class="sql-keyword">ON</span> (c.course_no = s.course_no)
+                                  <span class="sql-keyword">JOIN</span> grade g
+                                  <span class="sql-keyword">ON</span> (s.section_id = g.section_id)
+                              <span class="sql-keyword">WHERE</span>
+                                  grade_type_code = 'HM'
+                              <span class="sql-keyword">INTERSECT</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  c.course_no,
+                                  c.description
+                              <span class="sql-keyword">FROM</span>
+                                  course c <span class="sql-keyword">JOIN</span> section s
+                                  <span class="sql-keyword">ON</span> (c.course_no = s.course_no)
+                                  <span class="sql-keyword">JOIN</span> grade g
+                                  <span class="sql-keyword">ON</span> (s.section_id = g.section_id)
+                              <span class="sql-keyword">WHERE</span>
+                                  grade_type_code = 'MT'
+                              <span class="sql-keyword">INTERSECT</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  c.course_no,
+                                  c.description
+                              <span class="sql-keyword">FROM</span>
+                                  course c <span class="sql-keyword">JOIN</span> section s
+                                  <span class="sql-keyword">ON</span> (c.course_no = s.course_no)
+                                  <span class="sql-keyword">JOIN</span> grade g
+                                  <span class="sql-keyword">ON</span> (s.section_id = g.section_id)
+                              <span class="sql-keyword">WHERE</span>
+                                  grade_type_code = 'PA'
+                              <span class="sql-keyword">INTERSECT</span>
+                              <span class="sql-keyword">SELECT</span>
+                                  c.course_no,
+                                  c.description
+                              <span class="sql-keyword">FROM</span>
+                                  course c <span class="sql-keyword">JOIN</span> section s
+                                  <span class="sql-keyword">ON</span> (c.course_no = s.course_no)
+                                  <span class="sql-keyword">JOIN</span> grade g
+                                  <span class="sql-keyword">ON</span> (s.section_id = g.section_id)
+                              <span class="sql-keyword">WHERE</span>
+                                  grade_type_code = 'QZ'
+                              <span class="sql-keyword">ORDER BY</span>
+                                  c.course_no;
+                              </code>
+                            </pre>
+              </div>
+
+
+              <div class="ps-4">
+                <h6 class="pt-3 m-0">Uses:</h6>
+                <input type="checkbox" checked>
+                <label>SQL</label><br>
+                <input type="checkbox" checked>
+                <label>Oracle</label><br>
+                <input type="checkbox" checked>
+                <label>Weber State Icarus</label><br>
+              </div>
+
+              <div class="summary">
+                <h6>Great assingment that I had in 2550 Intro to Database Design and SQL it taught me how work through a
+                  data base to get specific results. Doing the joins on this assignment was straight forward finding the
+                  correct way to use the sub-queries was more difficult.</h6>
+              </div>
+            </div>
+
+
+
+            <!-- Java Russian Roullete -->
+            <div class="list py-2 my-3">
+              <div class="titleDate">
+
+                <h4>Russian Roullete</h4>
+                <h6 style="color: rgb(112, 112, 112);">Fall 2019</h6>
+              </div>
+
+              <div id="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_s0UkXz4YYw" frameborder="0"
+                  allowfullscreen></iframe>
+              </div>
+              <!--  Replace VIDEO_ID in the src attribute of the <iframe> tag with the actual YouTube video ID. For example, if the YouTube video link is https://www.youtube.com/watch?v=abcdefg, the video ID is abcdefg, so you would replace VIDEO_ID with abcdefg in the src attribute. -->
+
+
+              <div class="ps-4">
+                <h6 class="p-0 m-0">Uses:</h6>
+                <input type="checkbox" checked>
+                <label>Java</label><br>
+                <input type="checkbox" checked>
+                <label>J-Grasp</label><br>
+              </div>
+
+              <div class="summary">
+                <h6>A simple Java program that takes you on a jounery. After you are captured by the Russians you get to
+                  determine your fait. Will you die or will you party with Vladimir Putin?</h6>
+                <h6>This was my first programming final. While I was taking CS 1400 I discovered that I had an affinity
+                  towards coding. While this program is very simple and contains a desturbing amount of grammatical
+                  errors it played an important role on my CS jounery.</h6>
+              </div>
+            </div>
+
+
+          </div>
+        </aside>
+
+
+      </div>
+    </section>
+  </article>
+
+  <footer class="py-3 bg-dark text-light">
+    <p class="lead text-center"> &copy; All rights resereved</p>
+  </footer>
+</body>
+
+</html>

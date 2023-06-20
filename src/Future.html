@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future</title>
+  <link rel="stylesheet" href="./stylesheets/Future.css">
+</head>
+
+<body class="bckgrnd">
+
+  <nav class="navbar navbar-expand-sm">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand fs-2" style="color: rgb(90, 90, 90)" href="#">Zach Cisney</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav py-2">
+          <li class="nav-item">
+            <a class="nav-link navItem active" aria-current="page" href="http://localhost:8080/index.html#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navItem active" href="http://localhost:8080/Adventure.html#">Adventure</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navItem active" href="http://localhost:8080/Calculator.html#">Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link currentNavItem active" href="http://localhost:8080/Future.html#">Future</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link currentNavItem active" href="http://localhost:8080/Programs.html#">Programs</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <div class="card mt-3 p-2 justify-content-center" style="width:auto;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="https://images.unsplash.com/photo-1639586597236-c98e7cf09424?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            class="img-fluid rounded-start" alt="betterment book">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Personal Ambitions</h5>
+            <p class="card-text">I personally look forward to the future every day and enjoy that I am currnetly on the
+              right track to reach my goals. Just like this website I am constantly improving and often fall in love
+              with my work and loose track of time. This causes me to perfect some aspects while other are lack luster
+              but, there is no doubt that I will get what I want.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <article class="flex-fluid pt-3 pb-5">
+      <section class="middle container p-0 justify-content-center">
+
+        <div class="description">
+          <h4>Description:</h4>
+          <h6 class="mx-4">
+            This webpage will send the information about Fullment By Amazon Sellers (FBA Sellers) to a Google document
+            (G-Doc). Once in the Google document this information can be modeled into graphs, tables and anylized. This
+            site helps to identify new products that have great potential in low competition markets. All that you need
+            to do is input the password and fill out the seller info. Once you have added all of your potential products
+            to the que list you can then push the data to the G-Doc of your choice.
+          </h6>
+
+          <div class="password">
+            <div class="passwordOval">
+            <label style="font-weight: 500; font-size: large;" for="password">Password:</label>
+            <input class="ms-2" type="password" id="password" name="password">
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div style="display: flex; align-items: center;">
+          <h3 class="sellerHeading">FBA Seller Info</h3>
+
+          <div style="display: flex; margin-left: auto;">
+            <h5 class="me-3">G-Doc:</h5>
+            <h5 class="me-3">
+              <input type="checkbox" style="margin-right: 5px;">A
+              <input type="checkbox" style="margin-right: 5px;">B
+              <input type="checkbox" style="margin-right: 5px;">C
+            </h5>
+          </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 p-4 pt-0">
+
+          <aside class="order-2 order-sm-1">
+            <div class="col me-2 pe-sm-5 flex-fluid border border-dark border-start-0 border-top-0 border-bottom-0">
+              <div class="list py-2 my-3">
+                <h4>Product Specs</h4>
+                <form class="ps-4">
+                  <label for="Sells">30 Day Sells</label>
+                  <input type="number" id="Sells" value="">
+                  <br>
+                  <label for="reviews">Review Average</label>
+                  <input type="range" id="reviews" min="1" max="5" value="3">
+                  <br>
+                  <div>
+                  <label for="link">Link</label>
+                  <input type="url" id="link" value="http://example.com">
+                  </div>
+                  <br>
+                </form>
+              </div>
+              <div class="list py-2 my-3">
+                <h4>Seller Specs</h4>
+                <div class="ps-4">
+                  <input type="checkbox" id="item1" name="item1" value="Shells">
+                  <label for="item1">Peel shells off shrimp</label><br>
+                  <input type="checkbox" id="item2" name="item2" value="Season">
+                  <label for="item2">Place in pan with red pepper flakes and butter</label><br>
+                  <input type="checkbox" id="item3" name="item3" value="Grill">
+                  <label for="item3">Cook pasta</label>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <aside class="order-1 order-sm-2 rightSide">
+            <div class="col pe-2 pe-sm-0 ps-sm-2">
+              <h2 class="display-3 py-2 d-flex flex-sm-row-reverse">Que List</h2>
+              <div class="list py-2 my-3">
+                <h4>Cookies</h4>
+                <div class="ps-4">
+                  <input type="checkbox" id="item1" name="item1" value="Flour">
+                  <label for="item1">Flour</label><br>
+                  <input type="checkbox" id="item2" name="item2" value="Butter">
+                  <label for="item2">Butter</label><br>
+                  <input type="checkbox" id="item3" name="item3" value="Eggs">
+                  <label for="item3">Eggs</label><br>
+                  <input type="checkbox" id="item3" name="item3" value="Sugar">
+                  <label for="item3">Sugar</label><br>
+                  <input type="checkbox" id="item3" name="item3" value="Oven">
+                  <label for="item3">Pre-heat to 350F</label><br>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+         
+
+
+        </div>
+      </section>
+    </article>
+
+
+  </main>
+
+  <!-- <script type="module" src="./javascripts/Future.js"></script> -->
+</body>
+
+</html>
