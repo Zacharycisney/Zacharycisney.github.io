@@ -1,0 +1,49 @@
+@import url("bootstrap/dist/css/bootstrap.min.css");
+@import url("bootstrap-icons/font/bootstrap-icons.css");
+
+.bckgrnd{
+    background-color: rgb(17, 17, 17);
+    background-size: cover;
+}
+
+.currentNavItem{
+    border-bottom: 2px solid green;
+    margin-left: 2rem;
+    width: 100px;
+    text-align: center;
+    color: rgb(142, 142, 142);
+}
+
+.navItem{
+    border-bottom: 1px solid grey;
+    margin-left: 2rem;
+    width: 100px;
+    text-align: center;
+    color: rgb(142, 142, 142);
+
+}
+
+.navItem:hover, .currentNavItem:hover{
+    border-radius: 1.3rem;
+    border: solid green;
+    background-color: green;
+    
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+
+    color: white;
+}
+
+.completed{
+    background-color: rgb(30, 30, 30);
+    color: lightgray;
+    padding: 1rem;
+}
+
+.title {
+    border-radius: .35rem;
+    border: solid green;
+    background-color: green;
+
+    color: white;
+}
